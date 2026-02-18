@@ -132,7 +132,7 @@ public class OperatorsAndVariables {
         System.out.println(str instanceof String); //true [Simple Class Check]
         //(You created a variable str that holds a String object.Since str is indeed a String, the result is true.)
 
-        Object obj = new Integer(10);
+        Object obj = Integer.valueOf(10);
         System.out.println(obj instanceof Integer); //true [The Power of Polymorphism]
         //(Even though the reference type is Object, the actual object in memory is an Integer. Therefore, instanceof Integer returns true.)
         System.out.println(obj instanceof String); //false
