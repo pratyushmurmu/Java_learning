@@ -118,5 +118,4 @@ Pascal's Triangle: Used in probability and binomial expansions.
 Network Handshakes: If you have 5 people and everyone needs to shake hands with everyone else once,
 this array structure tracks those unique interactions without duplicates.*/
 
-//Example 2: User Input Jagged Array
 
