@@ -7,8 +7,8 @@ public class typesofArrays {
 
     // 2D-Array
     public static void main(String[] args) {
-        int n = 2;
-        int m = 2;
+        int n = 2; // no of rows
+        int m = 2; // no of columns
 
         int [][] arr = new int[n][m];
 
@@ -70,7 +70,7 @@ class Array2D{
              }
              System.out.println();
          }
-         sc.close();
+         sc.close(); //sc.close() is used to shut down the Scanner and release the resources it was holding
      }
 }
 
@@ -81,9 +81,10 @@ class Array3D{
     public static void main(String[] args) {
         int[][][] arr = new int[3][3][3];
 
-        int r = arr.length;
-        int s = arr[0].length;
-        int t = arr[0][0].length;
+        int r = arr.length; // This gives the size of the first dimension. In a 3D context, this represents the number of "blocks" or "pages."
+        int s = arr[0].length;// By adding [0], you are looking inside the first block. This gives the number of rows in that specific block.
+        int t = arr[0][0].length;// By adding [0][0], you are looking at the first row of the first block. This gives the number of columns
+                                 // (the actual integer elements) in that row
 
         int it = 1;
 
