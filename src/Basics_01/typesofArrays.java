@@ -86,6 +86,8 @@ class Array3D{
         int t = arr[0][0].length;// By adding [0][0], you are looking at the first row of the first block. This gives the number of columns
                                  // (the actual integer elements) in that row
 
+        // In 3D arrays, i = array, j = row, and k = column.
+
         int it = 1;
 
         for (int i = 0; i < r; i++){
