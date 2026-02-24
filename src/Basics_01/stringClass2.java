@@ -369,6 +369,109 @@ Step |       Action             |           Result
  */
 
 // 18. join(CharSequence delimiter, CharSequence... elements): Joins elements using the specified delimiter.
+class code16{
+    public static void main(String[] args) {
+        // delimiter is " " and elements are "This", "is", "Azerbaijan"
+        String tar = String.join(" ","This"," is"," Azerbaijan");
+        System.out.println(tar);//This  is  Azerbaijan
+    }
+}
+/*
+In the world of programming, a delimiter is a sequence of one or more characters used to specify the boundary between separate,
+ independent regions in plain text or other data streams.
+ How the correct code works
+In String.join(" ", "This", " is", " Azerbaijan"), you are passing four separate arguments separated by commas:
 
+" " (Delimiter): This is the "glue." Java will place this between every element.
 
+"This", " is", " Azerbaijan" (Elements): these are the pieces being glued.
 
+The Calculation:
+
+Take "This"
+
+Add delimiter " "
+
+Take " is"
+
+Add delimiter " "
+
+Take " Azerbaijan"
+
+Result: "This  is  Azerbaijan"
+(Note: You have two spaces because you included a space inside your strings AND used a space as a delimiter!)
+ */
+
+// 19. replaceAll(String regex, String replacement): Replaces all occurrences matching the regex.
+class code17{
+    public static void main(String[] args) {
+        String door = "Welcome to Geeksforgeeks";
+        System.out.println("After replacing regex with" + "replace _door : ");
+        System.out.println(door.replaceAll("(.*)geeks(.*)","GfG"));
+    }
+}
+/*
+After replacing regex withreplace _door :
+GfG
+*/
+/*
+-> How the Regex Works
+The core of this code is the pattern (.*)geeks(.*). Let's break down the "DNA" of this regex:
+
+. (Dot): Matches any single character (except for line breaks).
+
+*** (Asterisk/Star):** This is a quantifier meaning "zero or more times."
+
+.*: This combination means "match absolutely anything of any length."
+
+geeks: This is a literal match. The regex is looking for these specific characters in the middle of the string.
+
+-> Why the output is just "GfG"
+Here is the step-by-step logic the Java engine follows:
+
+Search: It looks at "Welcome to Geeksforgeeks".
+
+Match: * The first (.*) matches "Welcome to ".
+
+The literal geeks matches the geeks inside "Geeksforgeeks".
+
+The second (.*) matches the remaining "forgeeks".
+
+The Result: Because the regex started with .* and ended with .*, it successfully captured the entire string because "geeks" was found somewhere inside it.
+
+The Swap: Since the pattern matched the whole string, the replaceAll method removes the entire string and puts "GfG" in its place.
+ */
+
+// 20. replaceFirst(String regex, String replacement): Replaces only the first matching occurrence.
+class code18{
+    public static void main(String[] args) {
+        String us = "Memories Of Murder";
+        System.out.println(us.replaceFirst("(.*?)", "Snowden"));//SnowdenMemories Of Murder
+    }
+}
+/*
+-> The Mistake:
+The Error: "Dangling quantifier '*'"
+When you write (*?), the engine sees the "star" and asks: "Wait, what am I supposed to match zero-or-more times?"
+Because there is no character (like a dot) before it, the quantifier is "dangling" with nothing to do.
+
+-> The Solution: Add the Dot
+You need to add the period (.) to tell Java to match "any character."
+
+Wrong: (*?)
+
+Right: (.*?)
+
+-> Why the output is SnowdenMemories Of Murder
+When replaceFirst starts scanning your string "Memories Of Murder", it starts at Index 0 (the "invisible" space before the 'M').
+
+The Find: The regex engine looks at Index 0 and asks, "Can I find a match here?"
+
+The Match: Because your pattern is lazy (*?), it finds that a Zero-length match (an empty string) exists at Index 0.
+
+The Replace: replaceFirst takes that "nothingness" at the very start and replaces it with "Snowden".
+
+The Stop: Because it is replaceFirst, the engine stops immediately after the first successful replacement.
+
+The Result: "Snowden" + "Memories Of Murder" = SnowdenMemories Of Murder.
+ */
