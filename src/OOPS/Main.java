@@ -1,0 +1,27 @@
+package OOPS;
+/*
+Java Class
+A class is a blueprint that defines data and behavior for objects. It groups related fields and methods in a single unit.
+Memory for its members is allocated only when an object is created.
+
+--> Acts as a template to create objects with shared structure.
+--> Does not occupy memory for fields until instantiation.
+--> Can contain fields, methods, constructors, nested classes and interfaces.
+ */
+class Student {
+    int id;
+    String n;
+
+    public Student(int id, String n) {
+        this.id = id;
+        this.n = n;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(10, "Alice");
+        System.out.println(s1.id);//10
+        System.out.println(s1.n);//Alice
+    }
+}
+
