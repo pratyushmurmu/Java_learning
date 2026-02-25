@@ -86,3 +86,32 @@ Java supports the following types of inheritance:
 
 **Hybrid Inheritance (through Interface)**: A combination of two or more types of inheritance, achievable using interfaces.
 
+### 6. Polymorphism
+The word **polymorphism** means having many forms, and it comes from the Greek words **poly (many)** and **morph (forms)**, this means one entity can take many forms. In Java, polymorphism allows the same method or object to behave differently based on the context, specially on the project's actual runtime class.
+### Types of Polymorphism
+Polymorphism in Java is mainly of 2 types as mentioned below:
+
+1. **Compile-time Polymorphism(Method Overloading)** :Achieved when multiple methods have the same name but different parameters. The method call is resolved at compile time.
+
+2. **Runtime Polymorphism (Method Overriding )**: Achieved when a subclass provides a specific implementation of a method already defined in its superclass. The method call is resolved at runtime based on the object 
+
+### Advantage of OOP over Procedure-Oriented Programming Language
+Object-oriented programming (OOP) offers several key advantages over procedural programming:
+
+**Code reusability**: Classes and objects allow reuse of existing code, reducing duplication and improving efficiency.
+
+**Better structure and maintainability**: Programs are organized into logical units, making code easier to understand, debug, and maintain.
+
+**Supports DRY principle**: Common functionality is written once and reused, leading to cleaner and more maintainable code.
+
+**Faster development**: Modular and reusable components help in quicker and scalable application development.
+
+### Disadvantages of OOP
+
+**Steep learning curve**: Concepts like classes, objects, inheritance, and polymorphism can be difficult for beginners.
+
+**Overhead for small programs**: OOP may require more code and structure than necessary for simple applications.
+
+**Debugging complexity**: Code spread across multiple classes and layers can make debugging more time-consuming.
+
+**Higher memory usage**: Creating many objects can consume more memory compared to procedural programs.
