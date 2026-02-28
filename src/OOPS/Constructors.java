@@ -126,7 +126,7 @@ class  Rookie{
     String name;
     int id;
     Rookie(String name, int id){
-        this.name = name;
+        this.name = name;//In Java, this() is used to call another constructor of the same class, allowing constructor chaining.
         this.id = id;
     }
     // Copy Constructor
