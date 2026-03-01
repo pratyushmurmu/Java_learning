@@ -176,4 +176,76 @@ If obj is null, your code will crash. A good equals method should always return 
 //getClass() method returns the class object of "this" object and is used to get the actual runtime class of the object.
 
 public class objectClass {
+    public static void main(String[] args) {
+        Object o = new String("GSSOC");
+        /* [UPCASTING]: We create a String object but store it in an 'Object' reference.
+         * Think of this as: "I have a specific 'iPhone', but I'm referring to it
+         * generally as a 'Device'." It's still an iPhone inside.
+         */
+        Class c = o.getClass();
+        /* [REFLECTION]: Every object in the HEAP memory has a pointer to its class.
+         * .getClass() follows that pointer to see the original blueprint.
+         * It returns a 'Class' object—the metadata of the actual instance.
+         */
+        System.out.println("Class of Object o is " + c.getName());
+        /* [METADATA EXTRACTION]: .getName() returns the "Fully Qualified Name".
+         * This includes the Package (java.lang) and the Class (String).
+         */
+        // Class of Object o is java.lang.String
+    }
 }
+/*
+5. finalize() method
+finalize() method is invoked by the Garbage Collector just before an object is destroyed. It runs when the object has no remaining references.
+You can override finalize() to release system resources and perform cleanup, but its use is discouraged in modern Java.
+ */
+/*
+6. clone() method
+clone() method creates and returns a new object that is a copy of the current object.
+*/
+
+// 1. You MUST implement the Cloneable 'Marker Interface' or it throws an exception.
+class Clone implements Cloneable{
+    int id = 1;
+    String name = "Shweta";
+
+    // 2. Correct Method Signature: Public access + Method Name + Exception
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        // super.clone() does a 'Field-by-Field' copy (Shallow Copy)
+        return super.clone();
+    }
+
+    public static void main(String[] args) throws Exception{
+        Clone c1 = new Clone();
+
+        // 3. Type Casting is required because clone() returns an 'Object'
+        Clone c2 = (Clone) c1.clone();
+        System.out.println(c1.name);//Shweta
+        System.out.println(c2.name);//Shweta
+        System.out.println(c2.id);//1
+        // [MEMORY CHECK]: Are they the same object?
+        System.out.println("Same Reference? " + (c1 == c2));//Same Reference? false
+    }
+}
+
+/*
+How Cloning Works (The "Under the Hood" Logic)
+When you call super.clone(), Java does a Shallow Copy:
+
+Primitives: For int id, it copies the actual value (101).
+
+Objects/Strings: For String name, it copies the Reference (the memory address). This means c1.name and c2.name are actually pointing to the same String in the "String Constant Pool."
+
+Cloneable: It's a "Marker Interface" (it has no methods; it just tells the JVM "Hey, I'm allowed to be copied").
+
+super.clone(): The magic button that duplicates the object in the Heap.
+
+*/
+
+/*
+Refer to concurrency fro Concurrency methods.
+ */
+
+
+
